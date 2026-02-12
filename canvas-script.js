@@ -7,14 +7,17 @@ const minus = document.getElementById('mns-btn');
 let drawing = false;
 let brushSize = 1;
 
+
+
 plus.addEventListener("click", function() {
-    brushSize += 0.4;
-    console.log(brushSize)
+    brushSize += 0.5;
+    brushSizeInfo();
 });
 
 minus.addEventListener("click", function() {
-    brushSize -= 0.4;
-    console.log(brushSize)
+    brushSize -= 0.5;
+    brushSize = Math.max(0.5, brushSize);
+    brushSizeInfo();
 });
 
 canvas.addEventListener("pointerdown", e => {
@@ -26,8 +29,10 @@ canvas.addEventListener("pointerdown", e => {
 
 canvas.addEventListener("pointermove", e => {
     if(!drawing) return;
-
+    
     ctx.lineWidth = brushSize;
+    ctx.lineCap = "round";
+
     ctx.lineTo(e.offsetX, e.offsetY);
     ctx.stroke();
 });
@@ -35,4 +40,20 @@ canvas.addEventListener("pointermove", e => {
 canvas.addEventListener("pointerup", () => drawing = false);
 canvas.addEventListener("pointerleave", () => drawing = false);
 
-console.log(brushSize)
+document.getElementById("brs-size-inf").innerHTML = brushSize;
+
+function brushSizeInfo(){
+    document.getElementById("brs-size-inf").innerHTML = brushSize;
+}
+
+document.getElementById('upl-form').addEventListener("submit", e =>{
+    e.preventDefault();
+
+    const image = canvas.toDataURL('image/png');
+    console.log('Sending image',image);
+    
+});
+
+function showPosts() {
+    
+}

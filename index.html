@@ -19,14 +19,22 @@
     <main>
         <h2>canvas</h2>
         <div>
-            <button id="plus-btn">+</button>
-            <button id="mns-btn">-</button>
-            <canvas id="post" width="350" height="250"></canvas>
-            <p id="mouse-pos">Move mouse!</p>
+            <div>
+                <button type="button" id="plus-btn">+</button>
+                <input type="number" id="brs-inp" value="brushSize">
+                <button type="button" id="mns-btn">-</button>
+                <span id="brs-size-inf"></span>
+            </div>
+            <canvas id="post" width="300" height="200"></canvas>
+            <form id="upl-form">
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+        <div>
+            
         </div>
     </main>
+    <script src="script.js"></script>
     <script src="canvas-script.js"></script>
 </body>
-
 </html>
-
