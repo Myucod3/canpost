@@ -3,7 +3,7 @@ const ctx = canvas.getContext('2d');
 
 let drawing = false;
 let erasing = false;
-let brushColor = "black";
+let brushColor = brushColor;
 let brushSize = 2;
 
 document.getElementById('2px-btn').addEventListener("click", () => {
