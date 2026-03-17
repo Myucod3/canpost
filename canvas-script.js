@@ -3,6 +3,7 @@ const ctx = canvas.getContext('2d');
 
 let drawing = false;
 let erasing = false;
+let brushColor = "black";
 let brushSize = 2;
 
 document.getElementById('2px-btn').addEventListener("click", () => {
@@ -25,7 +26,7 @@ document.getElementById('8px-btn').addEventListener("click", () => {
     brushSizeInfo();
 });
 
-document.getElementById('tool-btn').addEventListener("click", () => {
+document.getElementById('tool-ers').addEventListener("click", () => {
     erasing = !erasing;
 
     if(erasing) {
@@ -35,9 +36,14 @@ document.getElementById('tool-btn').addEventListener("click", () => {
     }
 });
 
+document.getElementById('tool-clr').addEventListener("click", () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+})
+
 canvas.addEventListener("pointerdown", e => {
     drawing = true;
 
+    
     ctx.beginPath();
     ctx.moveTo(e.offsetX, e.offsetY);
 });
@@ -72,12 +78,11 @@ function brushSizeInfo(){
 
 document.getElementById('upl-form').addEventListener("submit", e => {
     e.preventDefault();
-
-    const image = canvas.toDataURL('image/png');
-    console.log('Sending image',image);
     
-    
-    
+    const img = document.createElement('img');
+    img.src = canvas.toDataURL('image/png');
+    document.getElementById('upl-pg').appendChild(img)
+    img.classList.add('can');
 });
 
 function saveCanvas(){

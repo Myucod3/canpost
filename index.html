@@ -18,25 +18,32 @@
     </aside>
     <main>
         <h2>canvas</h2>
-        <div>
+        <section>
             <div>
-                <button id="2px-btn">2px</button>
-                <button id="4px-btn">4px</button>
-                <button id="6px-btn">6px</button>
-                <button id="8px-btn">8px</button>
-                <button id="tool-btn">Eraser</button>
-                <span id="brs-size-inf"></span>
+                <div>
+                    <button id="red-btn">Red</button>
+                </div>
+                <div class="toolbox__">
+                    <button id="2px-btn">2px</button>
+                    <button id="4px-btn">4px</button>
+                    <button id="6px-btn">6px</button>
+                    <button id="8px-btn">8px</button>
+                    <button id="tool-ers">Eraser</button>
+                    <button id="tool-clr">Clear</button>
+                    <span id="brs-size-inf"></span>
+                </div>
             </div>
             <canvas id="post" width="300" height="300"></canvas>
             <form id="upl-form">
                 <button type="submit">Upload</button>
             </form>
-        </div>
-        <div>
-            
-        </div>
-        <div>
-            <a id="url-img"></a>
+        </section>
+        <section class="uploads" id="upl-pg">
+            <h3>Uploads</h3>
+            <div>
+                <p>canvas</p>
+                <img>
+            </div>
         </div>
     </main>
     <script src="script.js"></script>
