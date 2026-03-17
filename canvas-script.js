@@ -37,8 +37,8 @@ document.getElementById('tool-ers').addEventListener("click", () => {
 });
 
 document.getElementById('tool-clr').addEventListener("click", () => {
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
-})
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+});
 
 canvas.addEventListener("pointerdown", e => {
     drawing = true;
@@ -83,6 +83,8 @@ document.getElementById('upl-form').addEventListener("submit", e => {
     img.src = canvas.toDataURL('image/png');
     document.getElementById('upl-pg').appendChild(img)
     img.classList.add('can');
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 });
 
 function saveCanvas(){
