@@ -30,9 +30,9 @@ document.getElementById('tool-ers').addEventListener("click", () => {
     erasing = !erasing;
 
     if(erasing) {
-        document.getElementById('tool-btn').textContent = "Pen";
+        document.getElementById('tool-ers').textContent = "Pen";
     } else {
-        document.getElementById('tool-btn').textContent = "Eraser";
+        document.getElementById('tool-ers').textContent = "Eraser";
     }
 });
 
