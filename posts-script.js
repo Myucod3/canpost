@@ -21,8 +21,8 @@ function loadPosts(){
 
     post.forEach(item => {
         const img = document.createElement('img');
-        img.id = "post"
         img.src = item;
+        img.id = "post"
         document.getElementById('upl-pg').appendChild(img);
     })
 }
