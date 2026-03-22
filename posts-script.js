@@ -1,7 +1,8 @@
 document.getElementById('upl-form').addEventListener("submit", e => {
-
-    loadPosts();
+    e.preventDefault();
+    
     savePosts();
+    loadPosts();
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 });
@@ -27,8 +28,6 @@ function loadPosts(){
     })
 }
 
-window.onload = function(e){
-    e.preventDefault();
-
+window.onload = function(){
     loadPosts();
 }
