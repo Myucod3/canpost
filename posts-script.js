@@ -9,7 +9,8 @@ document.getElementById('upl-form').addEventListener("submit", e => {
 
 function savePosts(){
     const imgData = canvas.toDataURL('image/png');
-
+    document.getElementById('upl-pg').innerHTML = '<h3>Uploads</h3>';
+    
     const posts = JSON.parse(localStorage.getItem('posts') || '[]');
     posts.push(imgData);
 
