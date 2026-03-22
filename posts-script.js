@@ -1,5 +1,4 @@
 document.getElementById('upl-form').addEventListener("submit", e => {
-    e.preventDefault();
 
     loadPosts();
     savePosts();
