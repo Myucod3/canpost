@@ -1,6 +1,7 @@
 document.getElementById('upl-form').addEventListener("submit", e => {
     e.preventDefault();
 
+    loadPosts();
     savePosts();
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -17,17 +18,18 @@ function savePosts(){
 
 function loadPosts(){
     const post = JSON.parse(localStorage.getItem('posts') || '[]');
+    document.getElementById('post-el').innerHTML = '<h3>Uploads</h3>';
 
     post.forEach(item => {
         const img = document.createElement('img');
         img.src = item;
         img.id = "canvas-post"
-        document.getElementById('upl-pg').appendChild(img);
+        document.getElementById('post-el').appendChild(img);
     })
 }
 
 window.onload = function(e){
     e.preventDefault();
-    
+
     loadPosts();
 }
