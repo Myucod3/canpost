@@ -22,7 +22,7 @@ function loadPosts(){
     post.forEach(item => {
         const img = document.createElement('img');
         img.src = item;
-        img.id = "post"
+        img.id = "uploaded-post"
         document.getElementById('upl-pg').appendChild(img);
     })
 }
