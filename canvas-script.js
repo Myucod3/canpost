@@ -76,22 +76,3 @@ function brushSizeInfo(){
     document.getElementById("brs-size-inf").innerHTML = brushSize;
 }
 
-document.getElementById('upl-form').addEventListener("submit", e => {
-    e.preventDefault();
-    
-    const img = document.createElement('img');
-    img.src = canvas.toDataURL('image/png');
-    document.getElementById('upl-pg').appendChild(img)
-    img.classList.add('can');
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-});
-
-function saveCanvas(){
-    
-}
-
-function showPosts() {
-    
-
-}
