@@ -2,8 +2,6 @@ document.getElementById('upl-form').addEventListener("submit", e => {
     e.preventDefault();
 
     savePosts();
-    loadPosts();
-
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 });
 
